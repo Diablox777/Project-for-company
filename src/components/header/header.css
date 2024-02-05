@@ -2,10 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
   border-bottom: 1px solid;
   border-color: #e5e7eb;
-  border-width: 100%; 
+  border-width: 100%;
 }
 
 .header__logo {
@@ -23,8 +22,9 @@
 .slash {
   font-size: 34px;
   color: rgba(194, 193, 193, 0.294);
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 10px;
+  padding-bottom: 5px;
 }
 
 .profile__name {

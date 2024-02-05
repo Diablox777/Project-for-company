@@ -5,5 +5,3 @@ function validateChangeUserName(newUserName) {
 
     return {status: true, msg: ""};
 }
-
-//будет применяться позднее
