@@ -8,12 +8,12 @@ const Header = () => {
       <div className="header__logo">
         <div className="circle"></div>
         <p className="slash">/</p>
-          <ProfileCircle word={"A"} />
-          <div className="profile__name">Username</div>
-        </div>
-        <div className="Right">
-          <ProfileCircle word={"A"} />
-        </div>
+        <ProfileCircle word={"A"} />
+        <div className="profile__name">Имя пользователя</div>
+      </div>
+      <div className="Right">
+        <ProfileCircle word={"A"} />
+      </div>
     </header>
   );
 };
