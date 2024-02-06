@@ -3,6 +3,7 @@ import "./deleteAccountModal.css";
 
 const DeleteAccountModal = ({ onClose }) => {
   return (
+    <div className="overlay" onClick={onClose}>   
     <div className="modal">
       <div className="modal-content">
         <button
@@ -31,6 +32,7 @@ const DeleteAccountModal = ({ onClose }) => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };
