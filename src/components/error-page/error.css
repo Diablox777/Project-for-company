@@ -1,0 +1,20 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 10%;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    text-align: center;
+  }

@@ -77,7 +77,7 @@ const SettingsForm = () => {
               удалены
             </p>
           </div>
-          <div className="settings__controls__form-footer redborder">
+          <div className="settings__controls__form-footer redborder__footer">
             <p className="description"></p>
             <button className="button red" onClick={handleDeleteModalOpen}>
               Удалить аккаунт
