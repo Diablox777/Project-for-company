@@ -1,0 +1,69 @@
+.no__login__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 4vw;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+
+  border: 0px, 0px, 1px, 0px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.prices__button {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 5px 10px;
+gap: 10px;
+width: 38px;
+height: 28px;
+left: 125px;
+top: 11px;
+
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 28px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #1D1D1D;
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.login {
+  color: grey;
+}
+
+.registration__button {
+  padding: 5px 15px;
+  gap: 10px;
+  width: 135px;
+  height: 28px;
+  top: 11px;
+  background: #000000;
+  border-radius: 10px;
+
+
+
+  /* identical to box height, or 200% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

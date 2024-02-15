@@ -1,6 +1,7 @@
 import React from "react";
 import SettingsPage from "./pages/SettingsPage";
 import ErrorPage from "./pages/ErrorPage";
+import PricesPage from "./pages/PricesPage"
 
 const App = () => {
   return (
@@ -9,9 +10,16 @@ const App = () => {
       <SettingsPage />
     </div> 
     */
+     
     <div>
       <ErrorPage />
     </div>
+    
+   /*
+    <div className="wrapper" >
+      <PricesPage />
+    </div> 
+    */
   );
 };
 

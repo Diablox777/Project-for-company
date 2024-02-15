@@ -1,6 +1,14 @@
 import Header from "./header/Header";
 import SettingsForm from "./settings-form/SettingsForm";
 import DeleteAccountModal from "./delete/DeleteAccountModal";
-import Error from "./error-page/Error";
+import Footer from "./footer/Footer";
+import NoLoginHeader from "./no-login-header/NoLoginHeader";
+import PricesBlock from "./prices-block/PricesBlock";
 
-export { Header, SettingsForm, DeleteAccountModal, Error };
+import ampersand from "../img/ampersand.svg";
+import hashtag from "../img/hashtag.svg";
+import tilde from "../img/tilde.svg";
+import triangle from "../img/triangle.svg";
+import underscore from "../img/underscore.svg";
+
+export { Header, SettingsForm, DeleteAccountModal, Footer, NoLoginHeader, PricesBlock, ampersand, hashtag, tilde, triangle, underscore };
