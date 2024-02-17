@@ -1,0 +1,28 @@
+.prices {
+    padding: 8.68%;
+    background: linear-gradient(90deg, #6A11CB 0%, #2575FC 100%);
+   /*background-image: url(../../img/background.svg); */
+
+}
+
+.prices__title {
+    display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+font-weight: 600;
+    font-size: 56px;
+line-height: 60px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #6A11CB 0%, #2575FC 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Применить градиент к тексту */
+    color: transparent;
+  }
+  
+  .black-text {
+    color: black; /* Черный цвет для второго слова */
+  }
+  

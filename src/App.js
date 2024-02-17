@@ -5,21 +5,21 @@ import PricesPage from "./pages/PricesPage"
 
 const App = () => {
   return (
-    /* 
+     /*
     <div className="wrapper" >
       <SettingsPage />
     </div> 
     */
-     
+     /*
     <div>
       <ErrorPage />
     </div>
-    
-   /*
+    */
+   
     <div className="wrapper" >
       <PricesPage />
     </div> 
-    */
+    
   );
 };
 
