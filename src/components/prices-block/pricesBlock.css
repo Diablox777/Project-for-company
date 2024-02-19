@@ -1,28 +1,114 @@
 .prices {
-    padding: 8.68%;
-    background: linear-gradient(90deg, #6A11CB 0%, #2575FC 100%);
-   /*background-image: url(../../img/background.svg); */
-
+  padding: 8.68%;
+  /* background: linear-gradient(90deg, #6A11CB 0%, #2575FC 100%); */
+  /*background-image: url(../../img/background.svg); */
 }
 
 .prices__title {
-    display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-font-weight: 600;
-    font-size: 56px;
-line-height: 60px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 60px;
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, #6A11CB 0%, #2575FC 100%);
-    -webkit-text-fill-color: transparent;
-    background-clip: text; /* Применить градиент к тексту */
-    color: transparent;
-  }
-  
-  .black-text {
-    color: black; /* Черный цвет для второго слова */
-  }
-  
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Применить градиент к тексту */
+  color: transparent;
+}
+
+.black-text {
+  color: black; /* Черный цвет для второго слова */
+  margin-left: 15px;
+}
+
+.prices__container {
+  position: relative;
+  margin-top: 6%;
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  border: 1px solid #d7d7d7;
+  border-radius: 29px;
+}
+
+.top-border {
+  height: 100%;
+  width: 13px;
+margin: -1px;
+background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+-webkit-text-fill-color: transparent;
+  position: absolute;
+  left: 0;
+  border: 1px solid #d7d7d7;
+  border-radius: 29px;
+}
+
+.svg-top {
+  position: absolute;
+  margin-top: -14px;
+  top: 0;
+  height: 22px;
+}
+
+.svg-bottom {
+  position: absolute;
+  margin-bottom: 24px;
+  left: -62px;
+  bottom: 0;
+}
+
+.prices__block {
+  display: flex;
+  flex-direction: row; /* Располагать элементы в строку */
+  justify-content: space-between; /* Распределить пространство между элементами */
+  align-items: center; /* Выравнивать элементы по центру по вертикали */
+}
+
+
+/* Стили для кнопки с левым SVG */
+.button-left-svg {
+  width: 205px;
+  height: 48px;
+  top: 20px;
+  left: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.button-left-svg:hover {
+  background-color: #000;
+  transition: background-color 300ms ease-out;
+}
+
+/* Стили для кнопки с правым SVG */
+.button-right-svg {
+  width: 205px;
+  height: 48px;
+  top: 20px;
+  left: 318px;
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.button-right-svg:hover {
+  background-color: #000;
+  transition: background-color 300ms ease-out;
+}
