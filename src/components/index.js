@@ -11,4 +11,11 @@ import tilde from "../img/tilde.svg";
 import triangle from "../img/triangle.svg";
 import underscore from "../img/underscore.svg";
 
-export { Header, SettingsForm, DeleteAccountModal, Footer, NoLoginHeader, PricesBlock, ampersand, hashtag, tilde, triangle, underscore };
+import BackImage from "../img/back.svg";
+import Privilege from "../img/privilege.svg";
+import TryButtonBlack from "../img/try-button-black.svg";
+import TryButtonBlue from "../img/try-button-blue.svg";
+import SubButtonBlack from "../img/subscription-button-black.svg";
+import SubButtonBlue from "../img/subscription-button-blue.svg";
+
+export { Header, SettingsForm, DeleteAccountModal, Footer, NoLoginHeader, PricesBlock, ampersand, hashtag, tilde, triangle, underscore, BackImage, Privilege, TryButtonBlack, TryButtonBlue, SubButtonBlack, SubButtonBlue };

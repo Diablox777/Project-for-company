@@ -29,7 +29,7 @@ const SettingsForm = () => {
   };
 
   return (
-    <>
+    <div className="main">
       <h4 className="settings__title">Настройки</h4>
       <div className="settings__controls">
         <div className="settings__controls__menu">
@@ -88,7 +88,7 @@ const SettingsForm = () => {
       {isDeleteModalOpen && (
         <DeleteAccountModal onClose={handleDeleteModalClose} />
       )}
-    </>
+    </div>
   );
 };
 

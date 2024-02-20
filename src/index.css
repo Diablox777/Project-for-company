@@ -8,6 +8,14 @@ body {
 }
 
 .wrapper {
-  width: 75vw;
+  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 1441px) {
+  .wrapper {
+    width: 75%;
+    max-width: none;
+  }
 }
