@@ -1,12 +1,12 @@
 import React from "react";
-import { NoLoginHeader, PricesBlock, Footer } from "../components";
+import { NoLoginHeader, PricesBlock, FooterMP } from "../components";
 
 const PricesPage = () => {
   return (
     <>
       <NoLoginHeader />
       <PricesBlock />
-      <Footer />
+      <FooterMP />
     </>
   );
 

@@ -1,7 +1,7 @@
 import Header from "./header/Header";
 import SettingsForm from "./settings-form/SettingsForm";
 import DeleteAccountModal from "./delete/DeleteAccountModal";
-import Footer from "./footer/Footer";
+import FooterMP from "./footer-mp/FooterMP";
 import NoLoginHeader from "./no-login-header/NoLoginHeader";
 import PricesBlock from "./prices-block/PricesBlock";
 
@@ -17,5 +17,6 @@ import TryButtonBlack from "../img/try-button-black.svg";
 import TryButtonBlue from "../img/try-button-blue.svg";
 import SubButtonBlack from "../img/subscription-button-black.svg";
 import SubButtonBlue from "../img/subscription-button-blue.svg";
+import FooterLogo from "../img/footer-logo.svg";
 
-export { Header, SettingsForm, DeleteAccountModal, Footer, NoLoginHeader, PricesBlock, ampersand, hashtag, tilde, triangle, underscore, BackImage, Privilege, TryButtonBlack, TryButtonBlue, SubButtonBlack, SubButtonBlue };
+export { Header, SettingsForm, DeleteAccountModal, FooterMP, NoLoginHeader, PricesBlock, ampersand, hashtag, tilde, triangle, underscore, BackImage, Privilege, TryButtonBlack, TryButtonBlue, SubButtonBlack, SubButtonBlue, FooterLogo };
