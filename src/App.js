@@ -10,16 +10,16 @@ const App = () => {
       <SettingsPage />
     </div> 
     */
-     /*
-    <div>
+     
+    <div className="wrapper">
       <ErrorPage />
     </div>
-    */
-   
+    
+    /*
     <div className="wrapper" >
       <PricesPage />
     </div> 
-    
+    */
   );
 };
 
