@@ -4,35 +4,50 @@ import { Ampersand, Hashtag, Tilde, Triangle, Underscore } from "../components";
 
 const ErrorPage = () => {
   const initialPositions = [
-    { x: 50, y: 50 },
-    { x: 150, y: 50 },
-    { x: 250, y: 50 }, 
-    { x: 350, y: 50 },
-    { x: 50, y: 150 }, // пять элементов одного svg
-    { x: 150, y: 150 },
-    { x: 250, y: 150 },
-    { x: 350, y: 150 }, // 3 элемента другого svg
-    { x: 50, y: 250 },
-    { x: 150, y: 250 },
-    { x: 250, y: 250 }, // еще 3 элемента другого svg
-    { x: 350, y: 250 },
-    { x: 50, y: 350 },
-    { x: 150, y: 350 }, // еще 3 элемента другого svg
-    { x: 250, y: 350 },
-    { x: 350, y: 350 }, // еще два элемента другого svg
+    { x: 200, y: 450 },
+    { x: 100, y: 700 },
+    { x: 90, y: 910 },
+    { x: 350, y: 720 },
+    { x: 400, y: 910 },
+    { x: 600, y: 750 },
+    { x: 800, y: 850 },
+    { x: 1150, y: 450 },
+    { x: 1340, y: 650 },
+    { x: 1350, y: 910 },
+    { x: 1090, y: 720 },
+    { x: 1290, y: 100 },
+    { x: 100, y: 100 },
+    { x: 400, y: 250 },
+    { x: 700, y: 100 },
+    { x: 1000, y: 250 },
   ];
 
   const svgNames = [
-    { component: <img src={Ampersand} alt="Ampersand" />, rotation: getRandomRotation() },
-    { component: <img src={Hashtag} alt="Hashtag" />, rotation: getRandomRotation() },
-    { component: <img src={Tilde} alt="Tilde" />, rotation: getRandomRotation() },
-    { component: <img src={Triangle} alt="Triangle" />, rotation: getRandomRotation() },
-    { component: <img src={Underscore} alt="Underscore" />, rotation: getRandomRotation() },
+    {
+      component: <img src={Ampersand} alt="Ampersand" />,
+      rotation: getRandomRotation(),
+    },
+    {
+      component: <img src={Hashtag} alt="Hashtag" />,
+      rotation: getRandomRotation(),
+    },
+    {
+      component: <img src={Tilde} alt="Tilde" />,
+      rotation: getRandomRotation(),
+    },
+    {
+      component: <img src={Triangle} alt="Triangle" />,
+      rotation: getRandomRotation(),
+    },
+    {
+      component: <img src={Underscore} alt="Underscore" />,
+      rotation: getRandomRotation(),
+    },
   ];
 
   // Функция для получения случайного угла поворота
   function getRandomRotation() {
-    return Math.floor(Math.random() * 360); // Возвращает случайное число от 0 до 359
+    return Math.floor(Math.random() * 360);
   }
 
   // Функция для перемешивания массива в случайном порядке
@@ -40,7 +55,10 @@ const ErrorPage = () => {
     const shuffledArray = [...array];
     for (let i = shuffledArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
     }
     return shuffledArray;
   }
@@ -49,26 +67,30 @@ const ErrorPage = () => {
 
   return (
     <div className="error-page">
-      <h1 className="error-code">404</h1>
-      <p className="error-message">Упс... страница не найдена</p>
       <div>
         {shuffledPositions.map((position, index) => (
           <div
             key={index}
             className="svg-wrapper"
             style={{
-              position: 'absolute',
+              position: "absolute",
               left: `${position.x}px`,
               top: `${position.y}px`,
-              transform: `rotate(${svgNames[index % svgNames.length].rotation}deg)`,
+              transform: `rotate(${
+                svgNames[index % svgNames.length].rotation
+              }deg)`,
             }}
           >
             {svgNames[index % svgNames.length].component}
           </div>
         ))}
+        <div className="error-text">
+          <h1 className="error-code">404</h1>
+          <p className="error-message">Упс... страница не найдена</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ErrorPage; 
+export default ErrorPage;
