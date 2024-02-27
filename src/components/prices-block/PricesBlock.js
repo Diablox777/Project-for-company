@@ -9,7 +9,7 @@ const PricesBlock = () => {
   const [isHovered3, setIsHovered3] = useState(false);
 
   return (
-    <main className="prices border-gradient1">
+    <main className="prices">
       <span className="prices__back">
         <img src={BackImage} alt="Назад"></img>
       </span>
@@ -101,9 +101,9 @@ const PricesBlock = () => {
               <p>30 дневное сохранение аналитики</p>
             </div>
           </div>
-          <div className="button-wrapper">
+          <div className="button__wrapper">
             <img
-              className="try-button"
+              className="try__button"
               src={isHovered1 ? TryButtonBlue : TryButtonBlack}
               alt="Try Button"
               onMouseEnter={() => setIsHovered1(true)}
@@ -153,9 +153,9 @@ const PricesBlock = () => {
               <p>5 пользователей</p>
             </div>
           </div>
-          <div className="button-wrapper">
+          <div className="button__wrapper">
             <img
-              className="try-button"
+              className="try__button"
               src={isHovered2 ? SubButtonBlue : SubButtonBlack}
               alt="Try Button"
               onMouseEnter={() => setIsHovered2(true)}
@@ -215,9 +215,9 @@ const PricesBlock = () => {
               <p>Индивидуальный брендинг</p>
             </div>
           </div>
-          <div className="button-wrapper">
+          <div className="button__wrapper">
             <img
-              className="try-button"
+              className="try__button"
               src={isHovered3 ? SubButtonBlue : SubButtonBlack}
               alt="Sub Button"
               onMouseEnter={() => setIsHovered3(true)}

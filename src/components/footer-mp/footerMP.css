@@ -1,6 +1,9 @@
 .FooterMPMainContainer{
     width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px ;
     border-top: 1px solid #9F9F9F;
+    z-index: -10;
 }
 
 .FooterMPContainer{
@@ -11,21 +14,15 @@
 }
 .FirstFooterMP{
     display: inline-block;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 .SecondFooterMP{
     margin-left: 15%;
     vertical-align: top;
-    margin-top: 50px;
-    margin-bottom: 50px;
     display: inline-block;
 }
 .ThirdFooterMP{
     margin-left: 10%;
     vertical-align: top;
-    margin-top: 50px;
-    margin-bottom: 50px;
     display: inline-block;
 }
 .TextBoldFooter{
@@ -48,4 +45,22 @@
     padding-left: 100px;
     padding-right: 100px;
     
+  }
+
+  @media (max-width: 1000px) {
+    .FooterMPContainer{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .SecondFooterMP{
+        margin-left: 10%;
+        vertical-align: top;
+        display: inline-block;
+    }
+    .ThirdFooterMP{
+        margin-left: 5%;
+        vertical-align: top;
+        display: inline-block;
+    }
+
   }
