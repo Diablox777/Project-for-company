@@ -5,6 +5,7 @@
   background-image: url("../../img/background.png");
   background-size: cover;
   background-position: center;
+  font-family: "Helvetica Neue Cyr";
 }
 
 .prices::before {
@@ -19,26 +20,12 @@
 
 }
 
-.gradiвавent__background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0px;
-  height: 0px;
-  -webkit-box-shadow: 0px 0px 600px 600px rgba(166, 165, 255, 0.2);
-  -moz-box-shadow: 0px 0px 600px 600px rgba(166, 165, 255, 0.2);
-  box-shadow: 0px 0px 600px 600px rgba(166, 165, 255, 0.15);
-  z-index: -99;
-}
-
-
-
 .prices__title {
   display: flex;
   justify-content: center;
-  font-weight: 700;
   font-size: 56px;
+  font-weight: 900;
+  line-height: 60px;
   
 }
 
@@ -62,6 +49,9 @@
   background-color: white;
   border: 1px solid #d7d7d7;
   border-radius: 29px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 21px;
 }
 
 .top-border {
@@ -134,18 +124,24 @@
 .block__item__title {
   margin-bottom: 10px;
   margin-top: 0;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 .block__item__description {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
   color: #777777;
 }
 
 .price {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 35px;
-  line-height: 28px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
 }
 
 .block__item__price {
@@ -156,7 +152,12 @@
 }
 
 .monthly {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
   color: #777777;
+  
 }
 
 .block__item__privilege {
@@ -167,8 +168,11 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  height: 20px;
   margin-top: 20px;
+  height: 18px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .prices__back {
@@ -192,6 +196,9 @@
   outline: none;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 .try__button:hover {

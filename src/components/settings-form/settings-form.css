@@ -1,6 +1,7 @@
 .main {
   margin-left: 100px;
   margin-right: 100px;
+  font-family: "Segoe UI";
 }
 
 .settings__title {
@@ -23,6 +24,9 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .settings__controls__menu-item {

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./error.css";
+import React from "react";
+import "./errorPage.css";
 import { Ampersand, Hashtag, Tilde, Triangle, Underscore } from "../components";
 
 const ErrorPage = () => {

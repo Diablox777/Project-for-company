@@ -19,4 +19,4 @@ import SubButtonBlack from "../img/subscription-button-black.svg";
 import SubButtonBlue from "../img/subscription-button-blue.svg";
 import FooterLogo from "../img/footer-logo.svg";
 
-export { Header, SettingsForm, DeleteAccountModal, FooterMP, NoLoginHeader, PricesBlock, Ampersand, Hashtag, Tilde, Triangle, Underscore, BackImage, Privilege, TryButtonBlack, TryButtonBlue, SubButtonBlack, SubButtonBlue, FooterLogo };
+export { Header, SettingsForm, DeleteAccountModal, FooterMP, NoLoginHeader, PricesBlock, Ampersand, Hashtag, Tilde, Triangle, Underscore, BackImage, Privilege, TryButtonBlack, TryButtonBlue, SubButtonBlack, SubButtonBlue, FooterLogo, };

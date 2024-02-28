@@ -2,26 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 60px;
+  height: 60px;
   padding-left: 100px;
   padding-right: 100px;
   font-weight: 600;
   font-size: 14px;
   border-bottom: 1px solid #dddddd;
+  font-family: "Helvetica Neue Cyr";
 }
 
 .prices__button {
-padding: 5px 10px;
-cursor: pointer;
-
-
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 .no__login__header__right {
   display: flex;
   align-items: center;
   gap: 30px;
-  
 }
 
 .login {
@@ -35,6 +36,8 @@ cursor: pointer;
   border: 0;
   border-radius: 10px;
   color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 28px;
   cursor: pointer;
 }
@@ -43,4 +46,10 @@ cursor: pointer;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+@media (max-width: 1000px) {
+  .no__login__header__right {
+    gap: 10px;
+  }
 }
