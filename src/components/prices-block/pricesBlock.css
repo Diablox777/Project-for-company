@@ -40,45 +40,6 @@
   margin-left: 15px;
 }
 
-.prices__container {
-  position: relative;
-  margin-top: 55px;
-  width: 100%;
-  max-width: 1240px;
-  height: 10px;
-  background-color: white;
-  border: 1px solid #d7d7d7;
-  border-radius: 29px;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 21px;
-}
-
-.top-border {
-  height: 100%;
-  width: 13px;
-  margin: -1px;
-  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  border: 1px solid #d7d7d7;
-  border-radius: 29px;
-}
-
-.svg-top {
-  position: absolute;
-  margin-top: -14px;
-  top: 0;
-  height: 22px;
-}
-
-.svg-bottom {
-  position: absolute;
-  margin-bottom: 24px;
-  left: -62px;
-  bottom: 0;
-}
-
 .prices__block {
   display: flex;
   margin-top: 100px;
