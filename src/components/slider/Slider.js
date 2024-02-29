@@ -15,11 +15,11 @@ const Slider = ({ initialRegisteredUsers }) => {
 
   // Функция для определения диапазона зарегистрированных пользователей и остатка от деления
   const determineRangeAndRemainder = (users) => {
-    const rangeNumber = Math.floor(users / 5000);
-    const leftValue = rangeNumber * 5000;
-    const rightValue = (rangeNumber + 1) * 5000;
+    const rangeNumber = Math.floor(users / 10000);
+    const leftValue = rangeNumber * 10000;
+    const rightValue = (rangeNumber + 1) * 10000;
     setRange(`${leftValue}-${rightValue}`);
-    setRemainder(users % 5000);
+    setRemainder(users % 10000);
   }
   useLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
@@ -34,7 +34,7 @@ const Slider = ({ initialRegisteredUsers }) => {
       <div>
         <p>Количество зарегистрированных пользователей: {registeredUsers}</p>
         <p>Диапазон: {range}</p>
-        <p>Остаток от деления на 5000: {remainder}</p>
+        <p>Остаток от деления на 10000: {remainder}</p>
       </div>
     </>
   );
