@@ -1,42 +1,46 @@
-import React, {useLayoutEffect, useRef, useState, useEffect } from "react";
-import "./slider.css"; // Подключаем файл со стилями
+import React, { useRef, useState, useEffect } from "react";
+import "./slider.css"; 
 
 const Slider = ({ initialRegisteredUsers }) => {
-  const [registeredUsers, setRegisteredUsers] = useState(initialRegisteredUsers);
-  const [range, setRange] = useState("");
   const [remainder, setRemainder] = useState(0);
-  const ref = useRef(null);
-  const [width, setWidth] = useState(0);
+  const CircleRef = useRef(null);
+  const CoverRef = useRef(null);
+  const ContainerRef = useRef(null);
+  const TextRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [rightValue, setRightValue] = useState(0);
 
   useEffect(() => {
-    // Вызываем функцию при изменении количества зарегистрированных пользователей
-    determineRangeAndRemainder(registeredUsers);
-  }, [registeredUsers]);
-
-  // Функция для определения диапазона зарегистрированных пользователей и остатка от деления
-  const determineRangeAndRemainder = (users) => {
-    const rangeNumber = Math.floor(users / 10000);
-    const leftValue = rangeNumber * 10000;
-    const rightValue = (rangeNumber + 1) * 10000;
-    setRange(`${leftValue}-${rightValue}`);
-    setRemainder(users % 10000);
-  }
-  useLayoutEffect(() => {
-    setWidth(ref.current.offsetWidth);
+    setContainerWidth(CircleRef.current.offsetParent.offsetWidth);
   }, []);
 
+  useEffect(() => {
+    const newPosition = (containerWidth - 100) * (remainder / 10000);
+    CircleRef.current.style.transform = `translateX(${86 + newPosition}px) translateY(${-25}%)`;
+    CoverRef.current.style.width = `${100 + newPosition}px`;
+  }, [remainder]);
+
+  useEffect(() => {
+    determineRangeAndRemainder(initialRegisteredUsers);
+  }, [initialRegisteredUsers]);
+
+  const determineRangeAndRemainder = (users) => {
+    const rangeNumber = Math.floor(users / 10000);
+    const calculatedRightValue = (rangeNumber + 1) * 10000;
+    setRemainder(users % 10000);
+    setRightValue(calculatedRightValue);
+  };
+
   return (
-    <>
-      <div className="slider-container">
-        <div className="slider-circle" ref={ref}></div>
-        <div className="slider-cover" style={{ width: width }}></div>
-      </div>
-      <div>
-        <p>Количество зарегистрированных пользователей: {registeredUsers}</p>
-        <p>Диапазон: {range}</p>
-        <p>Остаток от деления на 10000: {remainder}</p>
-      </div>
-    </>
+      <div className="slider-container" ref={ContainerRef}>
+        <p className="slider-limit">{rightValue}</p>
+        <div className="slider-circle" ref={CircleRef}>
+          <div className="slider-text" ref={TextRef}>
+            <p className="users-value">{initialRegisteredUsers} пользователей</p>
+          </div>
+        </div>
+        <div className="slider-cover" ref={CoverRef}></div>
+        </div>
   );
 };
 

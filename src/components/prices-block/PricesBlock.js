@@ -15,7 +15,7 @@ const PricesBlock = () => {
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
 
-  const registeredUsers = 21000;
+  const registeredUsers = 4576;
 
   return (
     <main className="prices">
@@ -26,9 +26,7 @@ const PricesBlock = () => {
         <span className="gradient__text"> Сверхдоступные</span>
         <span className="black__text"> цены</span>
       </div>
-
-      <Slider initialRegisteredUsers={registeredUsers} /> {/* Используем компонент Slider */}
-
+      <Slider initialRegisteredUsers={registeredUsers} /> {}
       <div className="prices__block">
         <div className="prices__block-item">
           <p className="block__item__title">Бесплатно</p>
