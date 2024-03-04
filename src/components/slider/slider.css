@@ -31,27 +31,25 @@
 .slider-text {
   position: absolute;
   height: 27.5px;
-  top: -26px;
+  top: -28px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   background: grey;
-  border: none;
   border-radius: 5px;
-
 }
 
 .slider-text::after {
   content: "";
   position: absolute;
-  bottom: -7.7px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 14.095px solid transparent; 
-  border-right: 14.095px solid transparent; 
-  border-top: 7.7px solid grey;
+  bottom: -6.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 15.7514px solid transparent; 
+  border-right: 15.7514px solid transparent; 
+  border-top: 8.624px solid grey;
 }
 
 .users-value {
@@ -72,10 +70,17 @@
 .slider-limit {
   position: absolute;
   top: -30px;
-  right: 0;
   font-family: "Helvetica Neue Cyr";
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-align: center;
+}
+
+.left {
+left: 0;
+}
+
+.right {
+right: 0;
 }

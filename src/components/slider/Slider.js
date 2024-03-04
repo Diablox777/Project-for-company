@@ -8,6 +8,7 @@ const Slider = ({ initialRegisteredUsers }) => {
   const ContainerRef = useRef(null);
   const TextRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
+  const [leftValue, setLeftValue] = useState(0);
   const [rightValue, setRightValue] = useState(0);
 
   useEffect(() => {
@@ -15,10 +16,11 @@ const Slider = ({ initialRegisteredUsers }) => {
   }, []);
 
   useEffect(() => {
-    const newPosition = (containerWidth - 100) * (remainder / 10000);
-    CircleRef.current.style.transform = `translateX(${86 + newPosition}px) translateY(${-25}%)`;
-    CoverRef.current.style.width = `${100 + newPosition}px`;
-  }, [remainder]);
+    const newPosition = (containerWidth) * (remainder / 10000);
+    const translateX = remainder > 1200 ? newPosition : 86;
+    CircleRef.current.style.transform = `translateX(${translateX - 14}px) translateY(${-25}%)`;
+    CoverRef.current.style.width = `${translateX}px`;
+  }, [remainder, containerWidth]);
 
   useEffect(() => {
     determineRangeAndRemainder(initialRegisteredUsers);
@@ -26,14 +28,17 @@ const Slider = ({ initialRegisteredUsers }) => {
 
   const determineRangeAndRemainder = (users) => {
     const rangeNumber = Math.floor(users / 10000);
+    const calculatedLeftValue = rangeNumber * 10000;
     const calculatedRightValue = (rangeNumber + 1) * 10000;
     setRemainder(users % 10000);
+    setLeftValue(calculatedLeftValue);
     setRightValue(calculatedRightValue);
   };
 
   return (
       <div className="slider-container" ref={ContainerRef}>
-        <p className="slider-limit">{rightValue}</p>
+        <p className="slider-limit left">{leftValue}</p>
+        <p className="slider-limit right">{rightValue}</p>
         <div className="slider-circle" ref={CircleRef}>
           <div className="slider-text" ref={TextRef}>
             <p className="users-value">{initialRegisteredUsers} пользователей</p>

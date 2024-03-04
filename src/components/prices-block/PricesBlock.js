@@ -15,7 +15,7 @@ const PricesBlock = () => {
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
 
-  const registeredUsers = 4576;
+  const registeredUsers = 2261743;
 
   return (
     <main className="prices">
