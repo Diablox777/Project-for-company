@@ -7,7 +7,7 @@ import {
   TryButtonBlue,
   SubButtonBlack,
   SubButtonBlue,
-  Slider
+  Slider,
 } from "../../components";
 
 const PricesBlock = () => {
@@ -15,11 +15,11 @@ const PricesBlock = () => {
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
 
-  const registeredUsers = 2261743;
+  const registeredUsers = 11000;
 
   return (
     <main className="prices">
-      <span className="prices__back">
+      <span className="prices__svg button__back">
         <img src={BackImage} alt="Назад"></img>
       </span>
       <div className="prices__title">
@@ -39,19 +39,19 @@ const PricesBlock = () => {
           <p className="block__item__description">Бесплатно навсегда</p>
           <div className="block__item__privilege">
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>25 ссылок в месяц</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>5 тыс. отслеживаемых кликов в месяц</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>30 дневное сохранение аналитики</p>
@@ -79,31 +79,31 @@ const PricesBlock = () => {
           <p className="block__item__description">Оплачивается ежегодно</p>
           <div className="block__item__privilege">
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>1000 ссылок в месяц</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>50 тыс. отслеживаемых кликов в месяц</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>Сохранение аналитики в течение 1 года</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>10 пользовательских доменов</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>5 пользователей</p>
@@ -129,43 +129,43 @@ const PricesBlock = () => {
           <p className="block__item__description">Оплачивается ежегодно</p>
           <div className="block__item__privilege">
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>5000 ссылок в месяц</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>250 тыс. отслеживаемых кликов в месяц</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>Сохранение аналитики в течение 2 лет</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>20 пользовательских доменов</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>15 пользователей</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>Повышенная поддержка</p>
             </div>
             <div className="block__item__privilege-item">
-              <span className="prices__back">
+              <span className="prices__svg">
                 <img src={Privilege} alt="Преимущества:"></img>
               </span>
               <p>Индивидуальный брендинг</p>

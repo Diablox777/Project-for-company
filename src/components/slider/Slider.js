@@ -8,7 +8,6 @@ const Slider = ({ initialRegisteredUsers }) => {
   const ContainerRef = useRef(null);
   const TextRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
-  const [leftValue, setLeftValue] = useState(0);
   const [rightValue, setRightValue] = useState(0);
 
   useEffect(() => {
@@ -28,16 +27,13 @@ const Slider = ({ initialRegisteredUsers }) => {
 
   const determineRangeAndRemainder = (users) => {
     const rangeNumber = Math.floor(users / 10000);
-    const calculatedLeftValue = rangeNumber * 10000;
     const calculatedRightValue = (rangeNumber + 1) * 10000;
     setRemainder(users % 10000);
-    setLeftValue(calculatedLeftValue);
     setRightValue(calculatedRightValue);
   };
 
   return (
       <div className="slider-container" ref={ContainerRef}>
-        <p className="slider-limit left">{leftValue}</p>
         <p className="slider-limit right">{rightValue}</p>
         <div className="slider-circle" ref={CircleRef}>
           <div className="slider-text" ref={TextRef}>
