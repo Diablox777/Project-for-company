@@ -19,7 +19,7 @@ const PricesBlock = () => {
 
   return (
     <main className="prices">
-      <span className="prices__svg button__back">
+      <span className="button__back">
         <img src={BackImage} alt="Назад"></img>
       </span>
       <div className="prices__title">
