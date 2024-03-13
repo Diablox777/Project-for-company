@@ -55,6 +55,7 @@
   padding-top: 40px;
   padding-left: 65px;
   padding-right: 65px;
+  overflow: auto;
 }
 
 .link__input {
@@ -75,11 +76,37 @@ width: 100%;
   color: rgba(154, 154, 154, 0.5);
 }
 
+.png {
+  padding-left: 30px;
+}
+
 .input__container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
   gap: 8px;
+}
+
+.input__icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input__icon-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  right: 0; 
+  top: 50%; 
+  transform: translateY(-50%); 
+
+  border-left: 1px solid rgba(154, 154, 154, 0.5)
 }
 
 .svg__infinity {
@@ -101,7 +128,25 @@ width: 100%;
 }
 
 .link__functional {
+  position: relative;
+  height: 820px;
+  width: 380px;
+  border: 1px solid #000; 
+  border-radius: 6px; 
 }
+
+.link__functional-title {
+  position: absolute;
+  top: -23px; 
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  color: rgba(0, 0, 0, 1);
+  background-color: #fff;
+}
+
 /* ==============================================
    |                  FOOTER                |
    ============================================== */
