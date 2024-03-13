@@ -55,11 +55,10 @@
   padding-top: 40px;
   padding-left: 65px;
   padding-right: 65px;
-  overflow: auto;
 }
 
 .link__input {
-width: 100%;
+  width: 100%;
   margin-bottom: 20px;
   gap: 8px;
 }
@@ -102,11 +101,11 @@ width: 100%;
   height: 35px;
   width: 35px;
   position: absolute;
-  right: 0; 
-  top: 50%; 
-  transform: translateY(-50%); 
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 
-  border-left: 1px solid rgba(154, 154, 154, 0.5)
+  border-left: 1px solid rgba(154, 154, 154, 0.5);
 }
 
 .svg__infinity {
@@ -129,22 +128,57 @@ width: 100%;
 
 .link__functional {
   position: relative;
-  height: 820px;
   width: 380px;
-  border: 1px solid #000; 
-  border-radius: 6px; 
+  border: 1px solid #000;
+  border-radius: 6px;
 }
 
 .link__functional-title {
   position: absolute;
-  top: -23px; 
+  top: -23px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0em;
+  padding-left: 6px;
+  padding-right: 6px;
   color: rgba(0, 0, 0, 1);
   background-color: #fff;
+}
+
+.link__functional-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid rgba(154, 154, 154, 0.5)
+}
+
+.TEST {
+  clear: both;
+  display: block;
+}
+
+.functional__item-title {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  padding-right: 10px;
+}
+
+.functional__item-faq {
+  display: flex;
+  align-items: center;
+}
+
+.toggle__switch {
+  position: absolute;
+  bottom: 25%;
+  right: 0;
+  transform: translateX(-50%);
 }
 
 /* ==============================================
