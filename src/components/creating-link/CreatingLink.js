@@ -27,29 +27,51 @@ const Component2 = () => {
   // Создаем массив состояний isChecked для каждого Toggle
   const [isCheckedArray, setIsCheckedArray] = useState([false, false, false, false, false]);
 
+  console.log(isCheckedArray)
+
   const handleToggleComment = () => {
     console.log("Toggle 1 clicked");
-    setIsCheckedArray([true, false, false, false, false]);
+    setIsCheckedArray(prevState => {
+      const newState = [...prevState]; // создание копии предыдущего состояния
+      newState[0] = !newState[0]; // изменение нужного элемента
+      return newState; // возвращаем новое состояние
+    });
   };
 
   const handleToggleUTM = () => {
     console.log("Toggle 2 clicked");
-    setIsCheckedArray([false, true, false, false, false]);
+    setIsCheckedArray(prevState => {
+      const newState = [...prevState]; // создание копии предыдущего состояния
+      newState[1] = !newState[1]; // изменение нужного элемента
+      return newState; // возвращаем новое состояние
+    });
   };
 
   const handleToggleCalendar = () => {
     console.log("Toggle 3 clicked");
-    setIsCheckedArray([false, false, true, false, false]);
+    setIsCheckedArray(prevState => {
+      const newState = [...prevState]; // создание копии предыдущего состояния
+      newState[2] = !newState[2]; // изменение нужного элемента
+      return newState; // возвращаем новое состояние
+    });
   };
 
   const handleToggleIOS = () => {
     console.log("Toggle 4 clicked");
-    setIsCheckedArray([false, false, false, true, false]);
+    setIsCheckedArray(prevState => {
+      const newState = [...prevState]; // создание копии предыдущего состояния
+      newState[3] = !newState[3]; // изменение нужного элемента
+      return newState; // возвращаем новое состояние
+    });
   };
 
   const handleToggleAndroid = () => {
     console.log("Toggle 5 clicked");
-    setIsCheckedArray([false, false, false, false, true]);
+    setIsCheckedArray(prevState => {
+      const newState = [...prevState]; // создание копии предыдущего состояния
+      newState[4] = !newState[4]; // изменение нужного элемента
+      return newState; // возвращаем новое состояние
+    });
   };
 
   return (
@@ -184,7 +206,7 @@ const Component2 = () => {
                 ></img>
               </span>
               <div className="toggle__switch">
-              <Toggle onToggle={handleToggleComment} />
+              <Toggle initialChecked={isCheckedArray[0]} onToggle={handleToggleComment} />
         {isCheckedArray[0] && <Component1 />}
         </div>
             </div>
@@ -199,7 +221,7 @@ const Component2 = () => {
                 ></img>
               </span>
               <div className="toggle__switch">
-              <Toggle onToggle={handleToggleUTM} />
+              <Toggle initialChecked={isCheckedArray[1]} onToggle={handleToggleUTM} />
         {isCheckedArray[1] && <Component2 />}
         </div>
             </div>
@@ -214,7 +236,7 @@ const Component2 = () => {
                 ></img>
               </span>
               <div className="toggle__switch">
-              <Toggle onToggle={handleToggleCalendar} />
+              <Toggle initialChecked={isCheckedArray[2]} onToggle={handleToggleCalendar} />
         {isCheckedArray[2] && <Component1 />}
         </div>
             </div>
@@ -229,7 +251,7 @@ const Component2 = () => {
                 ></img>
               </span>
               <div className="toggle__switch">
-              <Toggle onToggle={handleToggleIOS} />
+              <Toggle initialChecked={isCheckedArray[3]} onToggle={handleToggleIOS} />
         {isCheckedArray[3] && <Component1 />}
         </div>
             </div>
@@ -244,7 +266,7 @@ const Component2 = () => {
                 ></img>
               </span>
               <div className="toggle__switch">
-              <Toggle onToggle={handleToggleAndroid} />
+              <Toggle initialChecked={isCheckedArray[4]} onToggle={handleToggleAndroid} />
         {isCheckedArray[4] && <Component1 />}
         </div>
             </div>

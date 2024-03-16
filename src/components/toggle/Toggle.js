@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './toggle.css';
 
-const Toggle = ({ initialChecked = false, onToggle }) => {
+const Toggle = ({ initialChecked, onToggle }) => {
+    console.log(onToggle)
     const [isChecked, setIsChecked] = useState(initialChecked);
   
     const handleToggle = () => {
-      setIsChecked(!isChecked);
+      setIsChecked((prevValue) => !prevValue);
+      console.log("ABABABABBABABAB")
       onToggle(); // Вызов колбэка onToggle для обработки изменений в CreatingLink
     };
 
@@ -13,11 +15,12 @@ const Toggle = ({ initialChecked = false, onToggle }) => {
     <div className="toggle-switch">
       <input
         type="checkbox"
-        id="switch"
-        checked={isChecked}
-        onChange={handleToggle}
+        id={`switch${onToggle}`}
+        checked={initialChecked}
+        onClick={() => onToggle()}
+        // onChange={() => onToggle()}
       />
-      <label htmlFor="switch"></label>
+      <label htmlFor={`switch${onToggle}`}></label>
     </div>
   );
 };
