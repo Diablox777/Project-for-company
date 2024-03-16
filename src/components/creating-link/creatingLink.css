@@ -157,11 +157,6 @@
   border-bottom: 1px solid rgba(154, 154, 154, 0.5)
 }
 
-.TEST {
-  clear: both;
-  display: block;
-}
-
 .functional__item-title {
   font-size: 14px;
   font-weight: 400;
@@ -180,6 +175,8 @@
   right: 0;
   transform: translateX(-50%);
 }
+
+
 
 /* ==============================================
    |                  FOOTER                |

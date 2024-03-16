@@ -4,16 +4,6 @@ import { FAQ, Toggle } from "../../components";
 
 const CreatingLink = () => {
 
-  // Компонент, который будет вызываться первым при клике на Toggle 1
-const Component1 = () => {
-  return <div className="TEST">***</div>;
-};
-
-// Компонент, который будет вызываться вторым при клике на Toggle 2
-const Component2 = () => {
-  return <div>Component 2</div>;
-};
-
   const handleMouseOver = () => {
     // Ваша логика для показа подсказки при наведении
     console.log("Показать подсказку");
@@ -24,55 +14,54 @@ const Component2 = () => {
     console.log("Скрыть подсказку");
   };
 
-  // Создаем массив состояний isChecked для каждого Toggle
-  const [isCheckedArray, setIsCheckedArray] = useState([false, false, false, false, false]);
+  const Comment = () => {
+    return (
+      <div>1222143</div>
+    )
+  }
 
-  console.log(isCheckedArray)
+  const UTM = () => {
+    return (
+      <div>122111143</div>
+    )
+  }
 
-  const handleToggleComment = () => {
-    console.log("Toggle 1 clicked");
-    setIsCheckedArray(prevState => {
-      const newState = [...prevState]; // создание копии предыдущего состояния
-      newState[0] = !newState[0]; // изменение нужного элемента
-      return newState; // возвращаем новое состояние
-    });
-  };
+  const Date = () => {
+    return (
+      <div>12211243</div>
+    )
+  }
 
-  const handleToggleUTM = () => {
-    console.log("Toggle 2 clicked");
-    setIsCheckedArray(prevState => {
-      const newState = [...prevState]; // создание копии предыдущего состояния
-      newState[1] = !newState[1]; // изменение нужного элемента
-      return newState; // возвращаем новое состояние
-    });
-  };
+  const IOS = () => {
+    return (
+      <div>122343143</div>
+    )
+  }
 
-  const handleToggleCalendar = () => {
-    console.log("Toggle 3 clicked");
-    setIsCheckedArray(prevState => {
-      const newState = [...prevState]; // создание копии предыдущего состояния
-      newState[2] = !newState[2]; // изменение нужного элемента
-      return newState; // возвращаем новое состояние
-    });
-  };
+  const Android = () => {
+    return (
+      <div>1234342143</div>
+    )
+  }
 
-  const handleToggleIOS = () => {
-    console.log("Toggle 4 clicked");
-    setIsCheckedArray(prevState => {
-      const newState = [...prevState]; // создание копии предыдущего состояния
-      newState[3] = !newState[3]; // изменение нужного элемента
-      return newState; // возвращаем новое состояние
-    });
-  };
-
-  const handleToggleAndroid = () => {
-    console.log("Toggle 5 clicked");
-    setIsCheckedArray(prevState => {
-      const newState = [...prevState]; // создание копии предыдущего состояния
-      newState[4] = !newState[4]; // изменение нужного элемента
-      return newState; // возвращаем новое состояние
-    });
-  };
+    const [toggles, setToggles] = useState([
+      { title: "Комментарий", checked: false, info: <Comment /> },
+      { title: "UTM-метка", checked: false, info: <UTM /> },
+      { title: "Дата окончания", checked: false, info: <Date /> },
+      { title: "iOS Targeting", checked: false, info: <IOS /> },
+      { title: "Android Targeting", checked: false, info: <Android /> }
+    ]);
+  
+    const handleToggle = (index) => {
+      setToggles(prevToggles => {
+        const newToggles = [...prevToggles];
+        newToggles[index] = {
+          ...newToggles[index],
+          checked: !newToggles[index].checked
+        };
+        return newToggles;
+      });
+    };
 
   return (
     <div className="overlay" onClick={() => {}}>
@@ -195,81 +184,23 @@ const Component2 = () => {
           </div>
           <div className="link__functional">
             <p className="link__functional-title">Функционал</p>
-            <div className="link__functional-item">
-              <p className="functional__item-title">Комментарий</p>
-              <span className="functional__item-faq">
-                <img
-                  src={FAQ}
-                  alt="Подсказка:"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                ></img>
-              </span>
-              <div className="toggle__switch">
-              <Toggle initialChecked={isCheckedArray[0]} onToggle={handleToggleComment} />
-        {isCheckedArray[0] && <Component1 />}
-        </div>
-            </div>
-            <div className="link__functional-item">
-              <p className="functional__item-title">UTM-метка</p>
-              <span className="functional__item-faq">
-                <img
-                  src={FAQ}
-                  alt="Подсказка:"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                ></img>
-              </span>
-              <div className="toggle__switch">
-              <Toggle initialChecked={isCheckedArray[1]} onToggle={handleToggleUTM} />
-        {isCheckedArray[1] && <Component2 />}
-        </div>
-            </div>
-            <div className="link__functional-item">
-              <p className="functional__item-title">Дата окончания</p>
-              <span className="functional__item-faq">
-                <img
-                  src={FAQ}
-                  alt="Подсказка:"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                ></img>
-              </span>
-              <div className="toggle__switch">
-              <Toggle initialChecked={isCheckedArray[2]} onToggle={handleToggleCalendar} />
-        {isCheckedArray[2] && <Component1 />}
-        </div>
-            </div>
-            <div className="link__functional-item">
-              <p className="functional__item-title">IOS Targeting</p>
-              <span className="functional__item-faq">
-                <img
-                  src={FAQ}
-                  alt="Подсказка:"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                ></img>
-              </span>
-              <div className="toggle__switch">
-              <Toggle initialChecked={isCheckedArray[3]} onToggle={handleToggleIOS} />
-        {isCheckedArray[3] && <Component1 />}
-        </div>
-            </div>
-            <div className="link__functional-item">
-              <p className="functional__item-title">Android Targeting</p>
-              <span className="functional__item-faq">
-                <img
-                  src={FAQ}
-                  alt="Подсказка:"
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                ></img>
-              </span>
-              <div className="toggle__switch">
-              <Toggle initialChecked={isCheckedArray[4]} onToggle={handleToggleAndroid} />
-        {isCheckedArray[4] && <Component1 />}
-        </div>
-            </div>
+            {toggles.map((toggle, index) => (
+              <div className="link__functional-item" key={index}>
+                <p className="functional__item-title">{toggle.title}</p>
+                <span className="functional__item-faq">
+                  <img
+                    src={FAQ}
+                    alt="Подсказка:"
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                  ></img>
+                </span>
+                <div className="toggle__switch">
+                    <Toggle initialChecked={toggle.checked} onToggle={() => handleToggle(index)} ind={index} />
+                    {toggle.checked && toggle.info}
+                </div>
+              </div>
+            ))}
           </div>
         </form>
         <div className="creating__link__footer">
