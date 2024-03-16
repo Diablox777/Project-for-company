@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./creatingLink.css";
 import { FAQ, Toggle } from "../../components";
 
 const CreatingLink = () => {
-
   const handleMouseOver = () => {
     // Ваша логика для показа подсказки при наведении
     console.log("Показать подсказку");
@@ -15,53 +14,60 @@ const CreatingLink = () => {
   };
 
   const Comment = () => {
+    const textAreaRef = useRef(null);
+    const [val, setVal] = useState("");
+    const handleChange = (e) => {
+      setVal(e.target.value);
+    }
+    
+    useEffect(() => {
+      textAreaRef.current.style.height = "auto";
+      textAreaRef.current.style.height = textAreaRef.current.scrollHeight + "px";
+    }, [val])
+  
     return (
-      <div>1222143</div>
-    )
-  }
+      <div className='w-screen min-h-screen bg-neutral-950 grid place-items-center'>
+        <div className='text-neutral-200 bg-neutral-800 p-2 w-[30rem] rounded flex flex-col space-y-2'>
+          <textarea className='p-1 bg-neutral-700 active:outline-none focus:outline-none rounded' placeholder='Добавить комментарий' value={val} onChange={handleChange} rows="2" ref={textAreaRef} style={{ minWidth: '100%', maxWidth: '100%' }}></textarea>
+        </div>
+      </div>
+    );
+  };
 
   const UTM = () => {
-    return (
-      <div>122111143</div>
-    )
-  }
+    return <div>122111143</div>;
+  };
 
   const Date = () => {
-    return (
-      <div>12211243</div>
-    )
-  }
+    return <div>12211243</div>;
+  };
 
   const IOS = () => {
-    return (
-      <div>122343143</div>
-    )
-  }
+    return <div>122343143</div>;
+  };
 
   const Android = () => {
-    return (
-      <div>1234342143</div>
-    )
-  }
+    return <div>1234342143</div>;
+  };
 
-    const [toggles, setToggles] = useState([
-      { title: "Комментарий", checked: false, info: <Comment /> },
-      { title: "UTM-метка", checked: false, info: <UTM /> },
-      { title: "Дата окончания", checked: false, info: <Date /> },
-      { title: "iOS Targeting", checked: false, info: <IOS /> },
-      { title: "Android Targeting", checked: false, info: <Android /> }
-    ]);
-  
-    const handleToggle = (index) => {
-      setToggles(prevToggles => {
-        const newToggles = [...prevToggles];
-        newToggles[index] = {
-          ...newToggles[index],
-          checked: !newToggles[index].checked
-        };
-        return newToggles;
-      });
-    };
+  const [toggles, setToggles] = useState([
+    { title: "Комментарий", checked: false, info: <Comment /> },
+    { title: "UTM-метка", checked: false, info: <UTM /> },
+    { title: "Дата окончания", checked: false, info: <Date /> },
+    { title: "iOS Targeting", checked: false, info: <IOS /> },
+    { title: "Android Targeting", checked: false, info: <Android /> },
+  ]);
+
+  const handleToggle = (index) => {
+    setToggles((prevToggles) => {
+      const newToggles = [...prevToggles];
+      newToggles[index] = {
+        ...newToggles[index],
+        checked: !newToggles[index].checked,
+      };
+      return newToggles;
+    });
+  };
 
   return (
     <div className="overlay" onClick={() => {}}>
@@ -186,6 +192,7 @@ const CreatingLink = () => {
             <p className="link__functional-title">Функционал</p>
             {toggles.map((toggle, index) => (
               <div className="link__functional-item" key={index}>
+                <div className="functional__item">
                 <p className="functional__item-title">{toggle.title}</p>
                 <span className="functional__item-faq">
                   <img
@@ -196,9 +203,16 @@ const CreatingLink = () => {
                   ></img>
                 </span>
                 <div className="toggle__switch">
-                    <Toggle initialChecked={toggle.checked} onToggle={() => handleToggle(index)} ind={index} />
-                    {toggle.checked && toggle.info}
+                  <Toggle
+                    initialChecked={toggle.checked}
+                    onToggle={() => handleToggle(index)}
+                    ind={index}
+                  />
                 </div>
+                </div>
+                {toggle.checked && (
+                  <div className="functional__item-info">{toggle.info}</div>
+                )}
               </div>
             ))}
           </div>

@@ -55,6 +55,16 @@
   padding-top: 40px;
   padding-left: 65px;
   padding-right: 65px;
+  overflow-y: auto;
+}
+
+/* Показать полосы прокрутки в .creating__link__main */
+.creating__link__main::-webkit-scrollbar {
+  width: 8px;
+}
+.creating__link__main::-webkit-scrollbar-thumb {
+  background: rgba(217, 217, 217, 1);
+  border-radius: 6px;
 }
 
 .link__input {
@@ -131,6 +141,7 @@
   width: 380px;
   border: 1px solid #000;
   border-radius: 6px;
+  margin-bottom: 100px;
 }
 
 .link__functional-title {
@@ -149,12 +160,16 @@
 
 .link__functional-item {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Установка направления элементов в столбец */
   position: relative;
-  height: 40px;
   padding-left: 10px;
   padding-right: 10px;
   border-bottom: 1px solid rgba(154, 154, 154, 0.5)
+}
+
+.functional__item {
+  display: flex;
+  position: relative;
 }
 
 .functional__item-title {
@@ -165,31 +180,31 @@
 }
 
 .functional__item-faq {
-  display: flex;
-  align-items: center;
+  padding-top: 15px;
+
 }
 
 .toggle__switch {
-  position: absolute;
-  bottom: 25%;
-  right: 0;
-  transform: translateX(-50%);
+  margin-left: auto;
+  margin-top: -4px;
 }
-
-
 
 /* ==============================================
    |                  FOOTER                |
    ============================================== */
 
-.creating__link__footer {
-  margin-top: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  border-top: 1px solid rgba(154, 154, 154, 0.5);
-}
+   .creating__link__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-top: 1px solid rgba(154, 154, 154, 0.5);
+    background-color: #fff;
+  }
 
 .create__link__button {
   width: 382px;
