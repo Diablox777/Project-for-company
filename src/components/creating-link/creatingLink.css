@@ -190,6 +190,54 @@
   margin-top: -4px;
 }
 
+.utm__input {
+width: 100%;
+}
+
+.utm__input-item {
+  display: flex; 
+  flex-wrap: nowrap; 
+  height: 35px;
+  width: 100%;
+  border: 1px solid rgba(154, 154, 154, 0.5);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.utm__input-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  border-right: 1px solid rgba(154, 154, 154, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.utm__input-input {
+  width: 100%;
+  flex: 2;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: rgba(241, 241, 241, 1);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.ios__android-input {
+  height: 35px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid rgba(154, 154, 154, 0.5);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(154, 154, 154, 0.5);
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
 /* ==============================================
    |                  FOOTER                |
    ============================================== */

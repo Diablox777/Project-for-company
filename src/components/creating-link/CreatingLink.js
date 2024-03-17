@@ -34,8 +34,41 @@ const CreatingLink = () => {
     );
   };
 
-  const UTM = () => {
-    return <div>122111143</div>;
+  const UTMInputs = () => {
+    const [inputs, setInputs] = useState([
+      { id: "Referral", title: "Referral", checked: false, inputType: "text" },
+      { id: "UTM Source", title: "UTM Source", checked: false, inputType: "text" },
+      { id: "UTM Medium", title: "UTM Medium", checked: false, inputType: "text" },
+      { id: "UTM Campaign", title: "UTM Campaign", checked: false, inputType: "text" },
+      { id: "UTM Term", title: "UTM Term", checked: false, inputType: "text" },
+      { id: "UTM Content", title: "UTM Content", checked: false, inputType: "text" },
+    ]);
+  
+    const handleInputChange = (id) => {
+      setInputs((prevInputs) => {
+        const newInputs = prevInputs.map((input) =>
+          input.id === id ? { ...input, checked: !input.checked } : input
+        );
+        return newInputs;
+      });
+    };
+  
+    return (
+      <div className="utm__input">
+        {inputs.map((input) => (
+          <div className="utm__input-item" key={input.id}>
+            <label className="utm__input-label" htmlFor={input.id}>{input.title}</label>
+            <input className="utm__input-input"
+              type={input.inputType}
+              id={input.id}
+              checked={input.checked}
+              onChange={() => handleInputChange(input.id)}
+              placeholder="https://nil-url/Ffv3cv.ru"
+            />
+          </div>
+        ))}
+      </div>
+    );
   };
 
   const Date = () => {
@@ -43,16 +76,32 @@ const CreatingLink = () => {
   };
 
   const IOS = () => {
-    return <div>122343143</div>;
+    return (
+      <input
+        className="ios__android-input"
+        type="text"
+        placeholder="https://apps.apple.com/app/18362974"
+        value=""
+        onChange={() => {}}
+      />
+    );
   };
-
+  
   const Android = () => {
-    return <div>1234342143</div>;
+    return (
+      <input
+        className="ios__android-input"
+        type="text"
+        placeholder="https://play.google.com/store/apps/details?id=18362974"
+        value=""
+        onChange={() => {}}
+      />
+    );
   };
 
   const [toggles, setToggles] = useState([
     { title: "Комментарий", checked: false, info: <Comment /> },
-    { title: "UTM-метка", checked: false, info: <UTM /> },
+    { title: "UTM-метка", checked: false, info: <UTMInputs /> },
     { title: "Дата окончания", checked: false, info: <Date /> },
     { title: "iOS Targeting", checked: false, info: <IOS /> },
     { title: "Android Targeting", checked: false, info: <Android /> },
