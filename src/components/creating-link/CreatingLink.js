@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./creatingLink.css";
-import { FAQ, Toggle } from "../../components";
+import { FAQ, Toggle, DateCalendar } from "../../components";
 
 const CreatingLink = () => {
   const handleMouseOver = () => {
@@ -71,10 +71,6 @@ const CreatingLink = () => {
     );
   };
 
-  const Date = () => {
-    return <div>12211243</div>;
-  };
-
   const IOS = () => {
     return (
       <input
@@ -102,7 +98,7 @@ const CreatingLink = () => {
   const [toggles, setToggles] = useState([
     { title: "Комментарий", checked: false, info: <Comment /> },
     { title: "UTM-метка", checked: false, info: <UTMInputs /> },
-    { title: "Дата окончания", checked: false, info: <Date /> },
+    { title: "Дата окончания", checked: false, info: <DateCalendar /> },
     { title: "iOS Targeting", checked: false, info: <IOS /> },
     { title: "Android Targeting", checked: false, info: <Android /> },
   ]);
