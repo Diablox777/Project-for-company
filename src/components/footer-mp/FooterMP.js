@@ -4,7 +4,7 @@ import { FooterLogo } from '../../components';
 
 const FooterMp = () => {
     return (
-        <div className="FooterMPMainContainer">
+        <div className="FooterMPMainContainer wrapper">
             <div className="FooterMPContainer">
                 <div className="FirstFooterMP">
                     <svg width="100" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -18,32 +18,60 @@ const CreatingLink = () => {
     const [val, setVal] = useState("");
     const handleChange = (e) => {
       setVal(e.target.value);
-    }
-    
+    };
+
     useEffect(() => {
       textAreaRef.current.style.height = "auto";
-      textAreaRef.current.style.height = textAreaRef.current.scrollHeight + "px";
-    }, [val])
-  
+      textAreaRef.current.style.height =
+        textAreaRef.current.scrollHeight + "px";
+    }, [val]);
+
     return (
-      <div className='w-screen min-h-screen bg-neutral-950 grid place-items-center'>
-        <div className='text-neutral-200 bg-neutral-800 p-2 w-[30rem] rounded flex flex-col space-y-2'>
-          <textarea className='p-1 bg-neutral-700 active:outline-none focus:outline-none rounded' placeholder='Добавить комментарий' value={val} onChange={handleChange} rows="2" ref={textAreaRef} style={{ minWidth: '100%', maxWidth: '100%' }}></textarea>
-        </div>
+      <div className="w-screen min-h-screen bg-neutral-950 flex justify-center items-center">
+      <div className="text-neutral-200 bg-neutral-800 p-2 w-[30rem] rounded flex flex-col space-y-2">
+        <textarea
+          className="p-1 bg-neutral-700 outline-none rounded border border-gray-300 custom-textarea text-neutral-300"
+          placeholder="Добавить комментарий"
+          value={val}
+          onChange={handleChange}
+          rows="2"
+          ref={textAreaRef}
+        ></textarea>
       </div>
+    </div>
     );
   };
 
   const UTMInputs = () => {
     const [inputs, setInputs] = useState([
       { id: "Referral", title: "Referral", checked: false, inputType: "text" },
-      { id: "UTM Source", title: "UTM Source", checked: false, inputType: "text" },
-      { id: "UTM Medium", title: "UTM Medium", checked: false, inputType: "text" },
-      { id: "UTM Campaign", title: "UTM Campaign", checked: false, inputType: "text" },
+      {
+        id: "UTM Source",
+        title: "UTM Source",
+        checked: false,
+        inputType: "text",
+      },
+      {
+        id: "UTM Medium",
+        title: "UTM Medium",
+        checked: false,
+        inputType: "text",
+      },
+      {
+        id: "UTM Campaign",
+        title: "UTM Campaign",
+        checked: false,
+        inputType: "text",
+      },
       { id: "UTM Term", title: "UTM Term", checked: false, inputType: "text" },
-      { id: "UTM Content", title: "UTM Content", checked: false, inputType: "text" },
+      {
+        id: "UTM Content",
+        title: "UTM Content",
+        checked: false,
+        inputType: "text",
+      },
     ]);
-  
+
     const handleInputChange = (id) => {
       setInputs((prevInputs) => {
         const newInputs = prevInputs.map((input) =>
@@ -52,13 +80,16 @@ const CreatingLink = () => {
         return newInputs;
       });
     };
-  
+
     return (
       <div className="utm__input">
         {inputs.map((input) => (
           <div className="utm__input-item" key={input.id}>
-            <label className="utm__input-label" htmlFor={input.id}>{input.title}</label>
-            <input className="utm__input-input"
+            <label className="utm__input-label" htmlFor={input.id}>
+              {input.title}
+            </label>
+            <input
+              className="utm__input-input"
               type={input.inputType}
               id={input.id}
               checked={input.checked}
@@ -82,7 +113,7 @@ const CreatingLink = () => {
       />
     );
   };
-  
+
   const Android = () => {
     return (
       <input
@@ -120,8 +151,8 @@ const CreatingLink = () => {
         <div className="creating__link__header">
           <span className="header__svg">
             <svg
-              width="18"
-              height="18"
+              width="20"
+              height="20"
               viewBox="0 0 20 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -238,22 +269,22 @@ const CreatingLink = () => {
             {toggles.map((toggle, index) => (
               <div className="link__functional-item" key={index}>
                 <div className="functional__item">
-                <p className="functional__item-title">{toggle.title}</p>
-                <span className="functional__item-faq">
-                  <img
-                    src={FAQ}
-                    alt="Подсказка:"
-                    onMouseOver={handleMouseOver}
-                    onMouseOut={handleMouseOut}
-                  ></img>
-                </span>
-                <div className="toggle__switch">
-                  <Toggle
-                    initialChecked={toggle.checked}
-                    onToggle={() => handleToggle(index)}
-                    ind={index}
-                  />
-                </div>
+                  <p className="functional__item-title">{toggle.title}</p>
+                  <span className="functional__item-faq">
+                    <img
+                      src={FAQ}
+                      alt="Подсказка:"
+                      onMouseOver={handleMouseOver}
+                      onMouseOut={handleMouseOut}
+                    ></img>
+                  </span>
+                  <div className="toggle__switch">
+                    <Toggle
+                      initialChecked={toggle.checked}
+                      onToggle={() => handleToggle(index)}
+                      ind={index}
+                    />
+                  </div>
                 </div>
                 {toggle.checked && (
                   <div className="functional__item-info">{toggle.info}</div>

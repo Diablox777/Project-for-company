@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import './dateCalendar.css'; // Подключаем CSS для стилизации
+import './dateCalendar.css';
 
 const DateCalendar = () => {
-  const [value, onChange] = useState(new Date()); // Состояние для текущей выбранной даты
+  const [value, onChange] = useState(new Date()); 
 
-  // Обработчик изменения даты
   const handleDateChange = (date) => {
-    onChange(date); // Обновляем выбранную дату
+    onChange(date); 
   };
 
   return (
     <div className="calendar-container">
       <Calendar
-        onChange={handleDateChange} // Передаем обработчик изменения даты
-        value={value} // Значение текущей выбранной даты
-        className="calendar" // Применяем класс для стилизации
+        onChange={handleDateChange} 
+        value={value} 
+        className="calendar" 
       />
     </div>
   );

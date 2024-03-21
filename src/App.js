@@ -16,7 +16,7 @@ const App = () => {
     </div>
     */
     
-    <div className="wrapper" >
+    <div>
       <PricesPage />
     </div> 
     

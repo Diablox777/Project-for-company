@@ -18,7 +18,8 @@ const PricesBlock = () => {
   const registeredUsers = 11000;
 
   return (
-    <main className="prices">
+    <div className="background">
+    <main className="prices wrapper">
       <span className="button__back">
         <img src={BackImage} alt="Назад"></img>
       </span>
@@ -183,6 +184,7 @@ const PricesBlock = () => {
         </div>
       </div>
     </main>
+    </div>
   );
 };
 

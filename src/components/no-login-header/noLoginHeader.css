@@ -1,3 +1,9 @@
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0;
+}
+
 .no__login__header {
   display: flex;
   justify-content: space-between;
@@ -7,7 +13,6 @@
   padding-right: 100px;
   font-weight: 600;
   font-size: 14px;
-  border-bottom: 1px solid #dddddd;
   font-family: "Helvetica Neue Cyr";
 }
 

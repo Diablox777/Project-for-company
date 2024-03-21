@@ -15,7 +15,7 @@ const NoLoginHeader = () => {
   };
 
   return (
-    <header className="no__login__header">
+    <header className="no__login__header wrapper">
       {isCreatingLinkOpen && <CreatingLink onClose={closeCreatingLink} />}
       <p className="prices__button">Цены</p>
       <span className="logo">
