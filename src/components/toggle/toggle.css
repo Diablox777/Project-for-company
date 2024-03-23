@@ -1,6 +1,8 @@
 .toggle-switch {
-    display: inline-block;
-  }
+  display: inline-block;
+  display: flex; /* Добавлено */
+  align-items: center; /* Добавлено */
+}
   
   .toggle-switch input[type="checkbox"] {
     height: 0;

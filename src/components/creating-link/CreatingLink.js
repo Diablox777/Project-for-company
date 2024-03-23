@@ -3,6 +3,43 @@ import "./creatingLink.css";
 import { FAQ, Toggle, DateCalendar } from "../../components";
 
 const CreatingLink = () => {
+  const [toggles, setToggles] = useState([
+    {
+      id: "comment",
+      title: "Комментарий",
+      checked: false,
+      info: <CommentComponent />,
+    },
+    { id: "utm", title: "UTM-метка", checked: false, info: <UTMInputs /> },
+    {
+      id: "date",
+      title: "Дата окончания",
+      checked: false,
+      info: <DateCalendar />,
+    },
+    {
+      id: "ios",
+      title: "iOS Targeting",
+      checked: false,
+      info: <IOSComponent />,
+    },
+    {
+      id: "android",
+      title: "Android Targeting",
+      checked: false,
+      info: <AndroidComponent />,
+    },
+  ]);
+
+  const handleToggle = (id) => {
+    setToggles((prevToggles) => {
+      const newToggles = prevToggles.map((toggle) =>
+        toggle.id === id ? { ...toggle, checked: !toggle.checked } : toggle
+      );
+      return newToggles;
+    });
+  };
+
   const handleMouseOver = () => {
     // Ваша логика для показа подсказки при наведении
     console.log("Показать подсказку");
@@ -13,136 +50,15 @@ const CreatingLink = () => {
     console.log("Скрыть подсказку");
   };
 
-  const Comment = () => {
-    const textAreaRef = useRef(null);
-    const [val, setVal] = useState("");
-    const handleChange = (e) => {
-      setVal(e.target.value);
-    };
-
-    useEffect(() => {
-      textAreaRef.current.style.height = "auto";
-      textAreaRef.current.style.height =
-        textAreaRef.current.scrollHeight + "px";
-    }, [val]);
-
-    return (
-      <div className="w-screen min-h-screen bg-neutral-950 flex justify-center items-center">
-      <div className="text-neutral-200 bg-neutral-800 p-2 w-[30rem] rounded flex flex-col space-y-2">
-        <textarea
-          className="p-1 bg-neutral-700 outline-none rounded border border-gray-300 custom-textarea text-neutral-300"
-          placeholder="Добавить комментарий"
-          value={val}
-          onChange={handleChange}
-          rows="2"
-          ref={textAreaRef}
-        ></textarea>
-      </div>
-    </div>
-    );
+  const handleCreateLink = () => {
+    // Ваша логика для создания ссылки
+    console.log("Создать ссылку");
   };
 
-  const UTMInputs = () => {
-    const [inputs, setInputs] = useState([
-      { id: "Referral", title: "Referral", checked: false, inputType: "text" },
-      {
-        id: "UTM Source",
-        title: "UTM Source",
-        checked: false,
-        inputType: "text",
-      },
-      {
-        id: "UTM Medium",
-        title: "UTM Medium",
-        checked: false,
-        inputType: "text",
-      },
-      {
-        id: "UTM Campaign",
-        title: "UTM Campaign",
-        checked: false,
-        inputType: "text",
-      },
-      { id: "UTM Term", title: "UTM Term", checked: false, inputType: "text" },
-      {
-        id: "UTM Content",
-        title: "UTM Content",
-        checked: false,
-        inputType: "text",
-      },
-    ]);
-
-    const handleInputChange = (id) => {
-      setInputs((prevInputs) => {
-        const newInputs = prevInputs.map((input) =>
-          input.id === id ? { ...input, checked: !input.checked } : input
-        );
-        return newInputs;
-      });
-    };
-
-    return (
-      <div className="utm__input">
-        {inputs.map((input) => (
-          <div className="utm__input-item" key={input.id}>
-            <label className="utm__input-label" htmlFor={input.id}>
-              {input.title}
-            </label>
-            <input
-              className="utm__input-input"
-              type={input.inputType}
-              id={input.id}
-              checked={input.checked}
-              onChange={() => handleInputChange(input.id)}
-              placeholder="https://nil-url/Ffv3cv.ru"
-            />
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  const IOS = () => {
-    return (
-      <input
-        className="ios__android-input"
-        type="text"
-        placeholder="https://apps.apple.com/app/18362974"
-        value=""
-        onChange={() => {}}
-      />
-    );
-  };
-
-  const Android = () => {
-    return (
-      <input
-        className="ios__android-input"
-        type="text"
-        placeholder="https://play.google.com/store/apps/details?id=18362974"
-        value=""
-        onChange={() => {}}
-      />
-    );
-  };
-
-  const [toggles, setToggles] = useState([
-    { title: "Комментарий", checked: false, info: <Comment /> },
-    { title: "UTM-метка", checked: false, info: <UTMInputs /> },
-    { title: "Дата окончания", checked: false, info: <DateCalendar /> },
-    { title: "iOS Targeting", checked: false, info: <IOS /> },
-    { title: "Android Targeting", checked: false, info: <Android /> },
-  ]);
-
-  const handleToggle = (index) => {
-    setToggles((prevToggles) => {
-      const newToggles = [...prevToggles];
-      newToggles[index] = {
-        ...newToggles[index],
-        checked: !newToggles[index].checked,
-      };
-      return newToggles;
-    });
+  const handleCreateLinkKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleCreateLink();
+    }
   };
 
   return (
@@ -220,7 +136,7 @@ const CreatingLink = () => {
           <div className="link__input">
             <div className="link__input-title">Тег ссылки</div>
             <div className="input__container">
-              <div className="input__icon">
+              <div className="input__icon left">
                 <svg
                   className="input__svg"
                   width="17"
@@ -245,7 +161,7 @@ const CreatingLink = () => {
                 value={() => {}}
                 onChange={() => {}}
               />
-              <div className="input__icon-right">
+              <div className="input__icon right">
                 <svg
                   width="14"
                   height="8"
@@ -266,8 +182,8 @@ const CreatingLink = () => {
           </div>
           <div className="link__functional">
             <p className="link__functional-title">Функционал</p>
-            {toggles.map((toggle, index) => (
-              <div className="link__functional-item" key={index}>
+            {toggles.map((toggle) => (
+              <div className="link__functional-item" key={toggle.id}>
                 <div className="functional__item">
                   <p className="functional__item-title">{toggle.title}</p>
                   <span className="functional__item-faq">
@@ -281,12 +197,12 @@ const CreatingLink = () => {
                   <div className="toggle__switch">
                     <Toggle
                       initialChecked={toggle.checked}
-                      onToggle={() => handleToggle(index)}
-                      ind={index}
+                      onToggle={() => handleToggle(toggle.id)}
+                      ind={toggle.id}
                     />
                   </div>
                 </div>
-                {toggle.checked && (
+                {toggle.checked !== undefined && toggle.checked && (
                   <div className="functional__item-info">{toggle.info}</div>
                 )}
               </div>
@@ -294,10 +210,131 @@ const CreatingLink = () => {
           </div>
         </form>
         <div className="creating__link__footer">
-          <button className="create__link__button">Создать ссылку</button>
+          <div className="creating__link__footer">
+            <button
+              className="create__link__button"
+              onClick={handleCreateLink}
+              onKeyDown={handleCreateLinkKeyDown}
+              tabIndex={0}
+            >
+              Создать ссылку
+            </button>
+          </div>
         </div>
       </div>
     </div>
+  );
+};
+
+const CommentComponent = () => {
+  const textAreaRef = useRef(null);
+  const [val, setVal] = useState("");
+  const handleChange = (e) => {
+    setVal(e.target.value);
+  };
+
+  useEffect(() => {
+    textAreaRef.current.style.height = "auto";
+    textAreaRef.current.style.height = textAreaRef.current.scrollHeight + "px";
+  }, [val]);
+
+  return (
+    <div className="w-screen min-h-screen bg-neutral-950 flex justify-center items-center">
+      <div className="text-neutral-200 bg-neutral-800 p-2 w-full max-w-[30rem] rounded flex flex-col space-y-2">
+        <textarea
+          className="p-1 bg-neutral-700 outline-none rounded border border-gray-300 custom-textarea text-neutral-300"
+          placeholder="Добавить комментарий"
+          value={val}
+          onChange={handleChange}
+          rows="2"
+          ref={textAreaRef}
+        ></textarea>
+      </div>
+    </div>
+  );
+};
+
+const UTMInputs = () => {
+  const [inputs, setInputs] = useState([
+    { id: "Referral", title: "Referral", checked: false, inputType: "text" },
+    {
+      id: "UTM Source",
+      title: "UTM Source",
+      checked: false,
+      inputType: "text",
+    },
+    {
+      id: "UTM Medium",
+      title: "UTM Medium",
+      checked: false,
+      inputType: "text",
+    },
+    {
+      id: "UTM Campaign",
+      title: "UTM Campaign",
+      checked: false,
+      inputType: "text",
+    },
+    { id: "UTM Term", title: "UTM Term", checked: false, inputType: "text" },
+    {
+      id: "UTM Content",
+      title: "UTM Content",
+      checked: false,
+      inputType: "text",
+    },
+  ]);
+
+  const handleInputChange = (id) => {
+    setInputs((prevInputs) => {
+      const newInputs = prevInputs.map((input) =>
+        input.id === id ? { ...input, checked: !input.checked } : input
+      );
+      return newInputs;
+    });
+  };
+
+  return (
+    <div className="utm__input">
+      {inputs.map((input) => (
+        <div className="utm__input-item" key={input.id}>
+          <label className="utm__input-label" htmlFor={input.id}>
+            {input.title}
+          </label>
+          <input
+            className="utm__input-input"
+            type={input.inputType}
+            id={input.id}
+            checked={input.checked}
+            onChange={() => handleInputChange(input.id)}
+            placeholder="https://nil-url/Ffv3cv.ru"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const IOSComponent = () => {
+  return (
+    <input
+      className="ios__android-input"
+      type="text"
+      placeholder="https://apps.apple.com/app/18362974"
+      value=""
+      onChange={() => {}}
+    />
+  );
+};
+
+const AndroidComponent = () => {
+  return (
+    <input
+      className="ios__android-input"
+      type="text"
+      placeholder="https://play.google.com/store/apps/details?id=18362974"
+      value=""
+      onChange={() => {}}
+    />
   );
 };
 
