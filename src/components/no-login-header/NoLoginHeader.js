@@ -15,15 +15,15 @@ const NoLoginHeader = () => {
   };
 
   return (
-    <header className="no__login__header wrapper">
+    <header className="no-login-header wrapper">
       {isCreatingLinkOpen && <CreatingLink onClose={closeCreatingLink} />}
-      <p className="prices__button">Цены</p>
+      <p className="prices-button">Цены</p>
       <span className="logo">
         <img src={LogoImage} alt="Логотип" />
       </span>
-      <div className="no__login__header__right">
-        <p className="prices__button login">Войти</p>
-        <button className="registration__button" onClick={toggleCreatingLink}>Зарегистрироваться</button>
+      <div className="no-login-header-right">
+        <p className="prices-button login">Войти</p>
+        <button className="registration-button" onClick={toggleCreatingLink}>Зарегистрироваться</button>
       </div>
     </header>
   );

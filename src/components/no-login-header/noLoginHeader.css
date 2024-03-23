@@ -1,17 +1,15 @@
-
-.no__login__header {
+.no-login-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 0 100px;
   font-weight: 600;
   font-size: 14px;
   font-family: "Helvetica Neue Cyr";
 }
 
-.prices__button {
+.prices-button {
   padding: 5px 10px;
   cursor: pointer;
   font-size: 14px;
@@ -19,7 +17,7 @@
   line-height: 28px;
 }
 
-.no__login__header__right {
+.no-login-header-right {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -29,13 +27,12 @@
   color: grey;
 }
 
-.registration__button {
-  display: flex;
+.registration-button {
   padding: 5px 15px;
-  background: #000000;
+  background: #000;
   border: 0;
   border-radius: 10px;
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   font-weight: 500;
   line-height: 28px;
@@ -45,11 +42,11 @@
 .logo {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
 }
 
 @media (max-width: 1000px) {
-  .no__login__header__right {
+  .no-login-header-right {
     gap: 10px;
   }
 }
