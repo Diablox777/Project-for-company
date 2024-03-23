@@ -11,179 +11,109 @@ import {
 } from "../../components";
 
 const PricesBlock = () => {
-  const [isHovered1, setIsHovered1] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
-  const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered, setIsHovered] = useState([false, false, false]);
 
-  const registeredUsers = 11000;
+  const handleMouseEnter = index => {
+    const updatedHovered = [...isHovered];
+    updatedHovered[index] = true;
+    setIsHovered(updatedHovered);
+  };
+
+  const handleMouseLeave = index => {
+    const updatedHovered = [...isHovered];
+    updatedHovered[index] = false;
+    setIsHovered(updatedHovered);
+  };
+
+  const priceBlocks = [
+    {
+      title: 'Бесплатно',
+      description: 'Для хобби и побочных проектов',
+      price: '0 ₽',
+      advantages: [
+        '25 ссылок в месяц',
+        '5 тыс. отслеживаемых кликов в месяц',
+        '30 дней сохранения аналитики'
+      ]
+    },
+    {
+      title: 'Профессиональный',
+      description: 'Для стартапов и малого бизнеса',
+      price: '1 999 ₽',
+      annualPayment: ' /месяц',
+      secondDescription: 'Оплачивается ежегодно',
+      advantages: [
+        '1000 ссылок в месяц',
+        '50 тыс. отслеживаемых кликов в месяц',
+        'Сохранение аналитики в течение 1 года',
+        '10 пользовательских доменов',
+        '5 пользователей'
+      ]
+    },
+    {
+      title: 'Бизнес',
+      description: 'Для более крупных команд',
+      price: '4 999 ₽',
+      annualPayment: ' /месяц',
+      secondDescription: 'Оплачивается ежегодно',
+      advantages: [
+        '5000 ссылок в месяц',
+        '250 тыс. отслеживаемых кликов в месяц',
+        'Сохранение аналитики в течение 2 лет',
+        '20 пользовательских доменов',
+        '15 пользователей',
+        'Повышенная поддержка',
+        'Индивидуальный брендинг'
+      ]
+    }
+  ];
 
   return (
     <div className="background">
-    <main className="prices wrapper">
-      <span className="button__back">
-        <img src={BackImage} alt="Назад"></img>
-      </span>
-      <div className="prices__title">
-        <span className="gradient__text"> Сверхдоступные</span>
-        <span className="black__text"> цены</span>
-      </div>
-      <Slider initialRegisteredUsers={registeredUsers} /> {}
-      <div className="prices__block">
-        <div className="prices__block-item">
-          <p className="block__item__title">Бесплатно</p>
-          <p className="block__item__description">
-            Для хобби и побочных проектов
-          </p>
-          <div className="block__item__price">
-            <p className="price">0 ₽</p>
-          </div>
-          <p className="block__item__description">Бесплатно навсегда</p>
-          <div className="block__item__privilege">
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>25 ссылок в месяц</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>5 тыс. отслеживаемых кликов в месяц</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>30 дневное сохранение аналитики</p>
-            </div>
-          </div>
-          <div className="button__wrapper">
-            <img
-              className="try__button"
-              src={isHovered1 ? TryButtonBlue : TryButtonBlack}
-              alt="Try Button"
-              onMouseEnter={() => setIsHovered1(true)}
-              onMouseLeave={() => setIsHovered1(false)}
-            />
-          </div>
+      <main className="prices wrapper">
+        <span className="button__back">
+          <img src={BackImage} alt="Назад" />
+        </span>
+        <div className="prices__title">
+          <span className="gradient__text">Сверхдоступные</span>
+          <span className="black__text">цены</span>
         </div>
-        <div className="prices__block-item center">
-          <p className="block__item__title">Профессиональный</p>
-          <p className="block__item__description">
-            Для стартапов и малого бизнеса
-          </p>
-          <div className="block__item__price">
-            <p className="price">1 999 ₽</p>
-            <p className="monthly">/месяц</p>
-          </div>
-          <p className="block__item__description">Оплачивается ежегодно</p>
-          <div className="block__item__privilege">
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>1000 ссылок в месяц</p>
+        <Slider initialRegisteredUsers={11000} />
+        <div className="prices__block">
+          {priceBlocks.map((block, index) => (
+            <div className="prices__block-item" key={index}>
+              <p className="block__item__title">{block.title}</p>
+              <p className="block__item__description">{block.description}</p>
+              <div className="block__item__price">
+                <p className="price">{block.price}</p>
+                {block.annualPayment && <p className="monthly">{block.annualPayment}</p>}
+              </div>
+              <p className="block__item__description">{block.secondDescription}</p>
+              {block.advantages && (
+                <div className="block__item__privilege">
+                  {block.advantages.map((advantage, idx) => (
+                    <div className="block__item__privilege-item" key={idx}>
+                      <span className="prices__svg">
+                        <img src={Privilege} alt="Преимущества:" />
+                      </span>
+                      <p>{advantage}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <div className="button__wrapper">
+                <img
+                  className="try__button"
+                  src={isHovered[index] ? SubButtonBlue : SubButtonBlack}
+                  alt="Try Button"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                />
+              </div>
             </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>50 тыс. отслеживаемых кликов в месяц</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>Сохранение аналитики в течение 1 года</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>10 пользовательских доменов</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>5 пользователей</p>
-            </div>
-          </div>
-          <div className="button__wrapper">
-            <img
-              className="try__button"
-              src={isHovered2 ? SubButtonBlue : SubButtonBlack}
-              alt="Try Button"
-              onMouseEnter={() => setIsHovered2(true)}
-              onMouseLeave={() => setIsHovered2(false)}
-            />
-          </div>
+          ))}
         </div>
-        <div className="prices__block-item">
-          <p className="block__item__title">Бизнес</p>
-          <p className="block__item__description">Для более крупных команд </p>
-          <div className="block__item__price">
-            <p className="price">4 999 ₽</p>
-            <p className="monthly">/месяц</p>
-          </div>
-          <p className="block__item__description">Оплачивается ежегодно</p>
-          <div className="block__item__privilege">
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>5000 ссылок в месяц</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>250 тыс. отслеживаемых кликов в месяц</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>Сохранение аналитики в течение 2 лет</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>20 пользовательских доменов</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>15 пользователей</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>Повышенная поддержка</p>
-            </div>
-            <div className="block__item__privilege-item">
-              <span className="prices__svg">
-                <img src={Privilege} alt="Преимущества:"></img>
-              </span>
-              <p>Индивидуальный брендинг</p>
-            </div>
-          </div>
-          <div className="button__wrapper">
-            <img
-              className="try__button"
-              src={isHovered3 ? SubButtonBlue : SubButtonBlack}
-              alt="Sub Button"
-              onMouseEnter={() => setIsHovered3(true)}
-              onMouseLeave={() => setIsHovered3(false)}
-            />
-          </div>
-        </div>
-      </div>
-    </main>
+      </main>
     </div>
   );
 };

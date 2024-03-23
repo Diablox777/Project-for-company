@@ -22,7 +22,6 @@
   font-weight: 900;
   line-height: 60px;
   margin-top: 30px;
-  
 }
 
 .gradient__text {
@@ -56,14 +55,11 @@
 }
 
 .prices__block-item:hover {
-  background: 
-    linear-gradient(#fff 0 0) padding-box,
-    linear-gradient(to right, #6a11cb 0%, #2575fc 100%) border-box;
+  background: linear-gradient(#fff 0 0) padding-box, linear-gradient(to right, #6a11cb 0%, #2575fc 100%) border-box;
   border: 2px solid transparent;
   border-radius: 20px;
   display: inline-block;
 }
-
 
 @media (max-width: 1000px) {
   .prices__block {
@@ -115,7 +111,6 @@
   font-weight: 500;
   line-height: 28px;
   color: #777777;
-  
 }
 
 .block__item__privilege {
