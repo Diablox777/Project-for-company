@@ -1,9 +1,3 @@
-.wrapper {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
 .FooterMPMainContainer{
     width: 100%;
     padding-top: 50px;
@@ -13,8 +7,6 @@
 }
 
 .FooterMPContainer{
-    padding-left: 100px;
-    padding-right: 100px;
     display: flex;
     justify-content: flex-start
 }
@@ -49,8 +41,6 @@
     display: flex;
     justify-content: space-between; /* Распределение элементов по всей доступной ширине */
     align-items: center; /* Выравнивание элементов по центру по вертикали */
-    padding-left: 100px;
-    padding-right: 100px;
     
   }
 
@@ -72,4 +62,14 @@
       }
   }
 
-  
+  @media (min-width: 1000px) and (max-width: 1440px) {
+    .FooterMPContainer{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .copyright {
+        padding-left: 100px;
+        padding-right: 100px;
+        
+      }
+    }

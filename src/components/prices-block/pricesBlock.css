@@ -8,12 +8,6 @@
   border-bottom: 1px solid rgba(221, 221, 221, 1);
 }
 
-.wrapper {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .prices {
   position: relative;
   padding: 100px;
