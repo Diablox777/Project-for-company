@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./creatingLink.css";
-import { FAQ, Toggle, DateCalendar } from "../../components";
+import { FAQ, Toggle, DateCalendar, TagList } from "../../components";
 
 const CreatingLink = () => {
   const [toggles, setToggles] = useState([
@@ -56,9 +56,16 @@ const CreatingLink = () => {
   };
 
   const handleCreateLinkKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleCreateLink();
     }
+  };
+
+  const [showTagList, setShowTagList] = useState(false);
+
+  const handleButtonClick = (event) => {
+    event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+    setShowTagList(!showTagList);
   };
 
   return (
@@ -136,7 +143,7 @@ const CreatingLink = () => {
           <div className="link__input">
             <div className="link__input-title">Тег ссылки</div>
             <div className="input__container">
-              <div className="input__icon left">
+              <div className="input__icon left-image">
                 <svg
                   className="input__svg"
                   width="17"
@@ -161,23 +168,30 @@ const CreatingLink = () => {
                 value={() => {}}
                 onChange={() => {}}
               />
-              <div className="input__icon right">
-                <svg
-                  width="14"
-                  height="8"
-                  viewBox="0 0 14 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1L7 7L13 1"
-                    stroke="black"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              <div style={{ position: 'relative' }}>
+      <button className="input__icon right-image" onClick={handleButtonClick}>
+        <svg
+          width="14"
+          height="8"
+          viewBox="0 0 14 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L7 7L13 1"
+            stroke="black"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      {showTagList && (
+        <div className="tag-list-container" style={{ position: 'absolute', top: '-100%', right: '0' }}>
+          <TagList />
+        </div>
+      )}
+    </div>
             </div>
           </div>
           <div className="link__functional">
